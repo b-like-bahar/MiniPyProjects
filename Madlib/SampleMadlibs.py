@@ -23,20 +23,22 @@ def mystery():
         "'I think the suspect is a/an {3rd_adjective} {1st_animal}.' The case was just beginning to unfold..."
     )
 
-def school_day():
-    return(
-     "On the first day of school, {1st_name} arrived at {1st_school_name} with a/an {1st_adjective} {1st_noun}."
-     "Their teacher, Mrs. {2nd_name}, was holding a/an {2nd_noun} and smiled warmly."
-     "Today, we will learn about {3rd_noun}, she said.During lunch, {3rd_name} ate a/an {2nd_adjective} sandwich with {4th_noun} and {5th_noun}."
-     "The day ended with a/an {3rd_adjective} class on {1st_subject}, and {4th_name} couldn't wait to return the next day."
+def superhero_story():
+    return (
+        "{1st_name} woke up one day feeling {1st_adjective}. "
+        "Suddenly, they heard a/an {2nd_adjective} {1st_animal} near the {1st_noun}. "
+        "Realizing they had superpowers, {2nd_name} decided to {1st_verb} to the {2nd_noun} and save the day. "
+        "Afterward, {3rd_name} found a/an {3rd_adjective} {3rd_noun} that seemed important. "
+        "With their newfound confidence, they vowed to protect every {2nd_animal} in the city!"
     )
+
 
 def robot():
     return(
-    "In a laboratory deep underground, a/an {1st_adjective} robot named {1st_name} was created."
-    "It had a/an {2nd_adjective} {1st_noun} for a head and {3rd_adjective} {2nd_noun} for arms."
-    "It was programmed to {1st_verb} and {2nd_verb} every day, but one day, it began to feel {4th_adjective}."
-    "The robot decided to escape and visit the {5th_adjective} {1st_place}, where it would {3rd_verb} with {3rd_noun} for the rest of its life."
+    "In a laboratory deep underground, a/an {1st_adjective} robot named {1st_name} was created. "
+    "It had a/an {2nd_adjective} {1st_noun} for a head and {3rd_adjective} {2nd_noun} for arms. "
+    "It was programmed to {1st_verb} and {2nd_verb} every day, but one day, it began to feel {4th_adjective}. "
+    "The robot decided to escape and visit the {5th_adjective} {1st_place}, where it would {3rd_verb} with {3rd_noun} for the rest of its life. "
     "The future looked {6th_adjective} for the robot."
     )
 
