@@ -6,8 +6,8 @@ def get_user_inputs(temp):
     clean_word=''
     for word in temp.split():
 
-        if word.startswith("{") or word.endswith("}."):
-            clean_word = word.strip("{}.")
+        if word.startswith("{") or word.endswith("}.") or word.endswith("},"):
+            clean_word = word.strip("{}.,")
             placeholders.append(clean_word)
 
     inputs = {}
