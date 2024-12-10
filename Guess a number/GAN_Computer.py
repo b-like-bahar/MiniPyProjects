@@ -1,6 +1,6 @@
 import random
 
-def guess_game():
+def guess_game_computer():
     goal_number = random.randint(1,20)
     print("Welcome to the guessing a number game (computer version)!")
 
