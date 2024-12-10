@@ -25,4 +25,4 @@ def guess_game_computer():
             print("Invalid input, please enter an integer. Try again.")
             continue
 
-guess_game()
+guess_game_computer()
