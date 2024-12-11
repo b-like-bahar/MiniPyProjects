@@ -1,7 +1,14 @@
 import random
 
 def rps():
-    print("This game is played for 5 repetitions.")
+    while True:
+        try:
+            game_turns = int(input("How many turns you want to play? "))
+            break
+        except ValueError:
+            print("Invalid input. Try again!")
+            continue
+    print(f"This game is played for {game_turns} repetitions.")
 
     rps_obj = {
         "r" : 1,
@@ -11,7 +18,7 @@ def rps():
     computer_score = 0
     user_score = 0
     counter = 0
-    while counter < 5:
+    while counter < game_turns:
         user_input = input("Please choose between rock (r), paper (p),and scissor (s): ").lower()
         computer_choice = random.randint(1,3)
 
