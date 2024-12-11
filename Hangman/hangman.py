@@ -7,5 +7,5 @@ print("Welcome to the Hangman game, you have 6 lives")
 def valid_word():
     word = random.choice(words)
     while "-" in word or " " in word:
-        word = words.random.choice(words)
-    return word.uppercase()
+        word = random.choice(words)
+    return word.upper()
