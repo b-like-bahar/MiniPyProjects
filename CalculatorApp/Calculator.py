@@ -39,6 +39,13 @@ for x in range(4):
             operator_button.grid(row=x+2, column=y+3)
             counter2+=1
 
+#ClearAll button
+ca_button = Button(root, text="AC", width=2, height=2)
+ca_button.grid(row=5, column=0)
+
+#ClearAll button
+ca_button = Button(root, text="AC", width=2, height=2)
+ca_button.grid(row=5, column=0)
 
 root.mainloop()
 
