@@ -50,6 +50,10 @@ ca_button.grid(row=5, column=0)
 ca_button = Button(root, text="AC", width=2, height=2, command=clear_all)
 ca_button.grid(row=5, column=0)
 
+#Equalto button
+eq_button = Button(root, text="=", width=2, height=2)
+eq_button.grid(row=5, column=2)
+
 root.mainloop()
 
 
