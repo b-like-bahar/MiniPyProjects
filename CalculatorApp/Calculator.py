@@ -3,11 +3,13 @@ from tkinter import *
 root = Tk()
 
 index=0
+# Insert a number at the current cursor position in the input field.
 def get_number(num):
     global index
     display.insert(index, num)
     index+=1
 
+# Insert an operator at the current cursor position in the input field and update the index.
 def get_operator(operator):
     global index
     display.insert(index, operator)
