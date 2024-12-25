@@ -13,6 +13,9 @@ def get_operator(operator):
     display.insert(index, operator)
     index+=len(operator)
 
+#cleare everything in input filed
+def clear_all():
+    display.delete(0,END)
 
 display = Entry(root)
 display.grid(row=1,columnspan=6)
@@ -44,7 +47,7 @@ ca_button = Button(root, text="AC", width=2, height=2)
 ca_button.grid(row=5, column=0)
 
 #ClearAll button
-ca_button = Button(root, text="AC", width=2, height=2)
+ca_button = Button(root, text="AC", width=2, height=2, command=clear_all)
 ca_button.grid(row=5, column=0)
 
 root.mainloop()
