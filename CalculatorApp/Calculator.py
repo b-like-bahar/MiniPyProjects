@@ -8,6 +8,12 @@ def get_number(num):
     display.insert(index, num)
     index+=1
 
+def get_operator(operator):
+    global index
+    display.insert(index, operator)
+    index+=len(operator)
+
+
 display = Entry(root)
 display.grid(row=1,columnspan=6)
 
@@ -29,7 +35,7 @@ counter2 = 0
 for x in range(4):
     for y in range(3):
         if counter2<len(operators):
-            operator_button = Button(root, text=operators[counter2], width=2, height=2)
+            operator_button = Button(root, text=operators[counter2], width=2, height=2, command = lambda text=operators[counter2] : get_operator(text))
             operator_button.grid(row=x+2, column=y+3)
             counter2+=1
 
