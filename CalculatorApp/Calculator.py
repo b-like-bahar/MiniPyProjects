@@ -23,7 +23,7 @@ def get_operator(operator):
         display.insert(index, operator)
         index+=len(operator)
 
-#cleare everything in input filed
+#clear everything in input filed
 def clear_all():
     display.delete(0,END)
 
@@ -83,4 +83,7 @@ ca_button.grid(row=5, column=0)
 eq_button = Button(root, text="=", width=2, height=2, command=calculate)
 eq_button.grid(row=5, column=2)
 
+#Delete button
+delete_button = Button(root, text = "<-", width=2, height=2, command=delete)
+delete_button.grid(row=5, column=5)
 root.mainloop()
