@@ -50,7 +50,7 @@ def calculate():
         # Replace '√' with 'math.sqrt'
         calculation = calculation.replace("\u221A", "math.sqrt")
         # Replace 'π' with 'math.pi'
-        calculation = calculation.replace("\u03C0", "math.pi")
+        calculation = calculation.replace("\u03C0", "*math.pi")
         # Replace '^' with '**'
         calculation = calculation.replace("^", "**")
 
