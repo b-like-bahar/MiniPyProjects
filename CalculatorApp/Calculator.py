@@ -27,6 +27,18 @@ def get_operator(operator):
 def clear_all():
     display.delete(0,END)
 
+#delete lastly entered digit or operator
+def delete():
+    cal_string = display.get()
+    if len(cal_string):
+        new_cal_string = cal_string[:-1]
+        clear_all()
+        display.insert(0,new_cal_string )
+    else:
+        clear_all()
+        display.insert(0, "")
+
+
 #calculate the calculation in input field
 def calculate():
     calculation = display.get()
