@@ -4,12 +4,14 @@ import math
 
 root = Tk()
 
+
 index=0
 # Insert a number at the current cursor position in the input field
 def get_number(num):
     global index
     display.insert(index, num)
     index+=1
+
 
 # Insert an operator at the current cursor position in the input field and update the index
 def get_operator(operator):
@@ -23,9 +25,11 @@ def get_operator(operator):
         display.insert(index, operator)
         index+=len(operator)
 
+
 #clear everything in input filed
 def clear_all():
     display.delete(0,END)
+
 
 #delete lastly entered digit or operator
 def delete():
@@ -61,6 +65,7 @@ def calculate():
 display = Entry(root)
 display.grid(row=1,columnspan=6)
 
+
 # number buttons
 numbers = [1,2,3,4,5,6,7,8,9]
 counter1 = 0
@@ -71,6 +76,7 @@ for x in range(3):
         counter1+=1
 zero_button = Button(root, text="0", width=2, height=2, command= lambda : get_number(0))
 zero_button.grid(row=5, column=1)
+
 
 #operator buttons
 operators = ["+", "-", "*", "/", "%", "^", "\u03C0" , "(", ")", ".", "\u221A"]
@@ -83,13 +89,11 @@ for x in range(4):
             operator_button.grid(row=x+2, column=y+3)
             counter2+=1
 
-#ClearAll button
-ca_button = Button(root, text="AC", width=2, height=2)
-ca_button.grid(row=5, column=0)
 
 #ClearAll button
 ca_button = Button(root, text="AC", width=2, height=2, command=clear_all)
 ca_button.grid(row=5, column=0)
+
 
 #Equalto button
 eq_button = Button(root, text="=", width=2, height=2, command=calculate)
@@ -98,4 +102,5 @@ eq_button.grid(row=5, column=2)
 #Delete button
 delete_button = Button(root, text = "<-", width=2, height=2, command=delete)
 delete_button.grid(row=5, column=5)
+
 root.mainloop()
