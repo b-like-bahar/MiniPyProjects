@@ -46,7 +46,7 @@ zero_button = Button(root, text="0", width=2, height=2, command= lambda : get_nu
 zero_button.grid(row=5, column=1)
 
 #operator buttons
-operators = ["+", "-", "x", "/", "%", "^", "\u03C0" , "(", ")", ".", "\u221A"]
+operators = ["+", "-", "*", "/", "%", "^", "\u03C0" , "(", ")", ".", "\u221A"]
 
 counter2 = 0
 for x in range(4):
