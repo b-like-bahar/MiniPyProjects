@@ -1,5 +1,7 @@
 from tkinter import *
 import ast
+import math
+
 root = Tk()
 
 index=0
@@ -23,6 +25,13 @@ def clear_all():
 def calculate():
     calculation = display.get()
     try:
+        # Replace '√' with 'math.sqrt'
+        calculation = calculation.replace("\u221A", "math.sqrt")
+        # Replace 'π' with 'math.pi'
+        calculation = calculation.replace("\u03C0", "math.pi")
+        # Replace '^' with '**'
+        calculation = calculation.replace("^", "**")
+
         node = ast.parse(calculation, mode="eval")
         result = eval(compile(node, "<string", "eval"))
         clear_all()
