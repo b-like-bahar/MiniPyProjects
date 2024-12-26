@@ -14,8 +14,14 @@ def get_number(num):
 # Insert an operator at the current cursor position in the input field and update the index
 def get_operator(operator):
     global index
-    display.insert(index, operator)
-    index+=len(operator)
+    #handle the case when the operator is √
+    if operator =="\u221A":
+        display.insert(index, operator + "(")
+        index+=len(operator) + 1
+    # handle rest of operators
+    else:
+        display.insert(index, operator)
+        index+=len(operator)
 
 #cleare everything in input filed
 def clear_all():
