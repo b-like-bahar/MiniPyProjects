@@ -46,6 +46,15 @@ def winner_detector():
         game_finished=True
         return
 
+    # check winner anit-diagonally
+    if board[0][2]["text"] == board[1][1]["text"] == board[2][0]["text"] and board[0][2]["text"] != "":
+        turn_label.config(text=f"{board[0][0]['text']} is winner!", foreground=color_yellow)
+        board[0][2].config(foreground=color_yellow, background=color_light_gray)
+        board[1][1].config(foreground=color_yellow, background=color_light_gray)
+        board[2][0].config(foreground=color_yellow, background=color_light_gray)
+        game_finished=True
+        return
+
 def new_game():
     pass
 
