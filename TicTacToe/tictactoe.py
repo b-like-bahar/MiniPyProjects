@@ -14,6 +14,21 @@ def assign_tile(row, column):
 
     turn_label["text"]= current_player +"'s turn"
 
+    winner_detector()
+
+def winner_detector():
+    global turns, game_finished
+    turns+=1
+
+    #check winner horizontally
+    for row in range(3):
+        if board[row][0]["text"] == board[row][1]["text"] == board[row][2]["text"] and board[row][0]["text"] != "":
+            turn_label.config(text=f"{board[row][0]['text']} is winner!", foreground=color_yellow)
+            for column in range(3):
+                board[row][column].config(foreground=color_yellow, background=color_light_gray)
+            game_finished=True
+            return
+
 def new_game():
     pass
 
@@ -31,6 +46,8 @@ color_blue = "#4584b6"
 color_yellow = "#ffde57"
 color_gray = "#343434"
 color_light_gray = "#646464"
+turns = 0
+game_finished = False
 
 # main window setup
 root = Tk()
