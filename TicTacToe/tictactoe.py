@@ -29,6 +29,15 @@ def winner_detector():
             game_finished=True
             return
 
+    # check winner vertically
+    for column in range(3):
+        if board[0][column]["text"] == board[1][column]["text"] == board[2][column]["text"] and board[0][column]["text"] !="":
+            turn_label.config(text=f"{board[0][column]['text']} is winner!", foreground=color_yellow)
+            for row in range(3):
+                board[row][column].config(foreground=color_yellow, background=color_light_gray)
+            game_finished=True
+            return
+
 def new_game():
     pass
 
