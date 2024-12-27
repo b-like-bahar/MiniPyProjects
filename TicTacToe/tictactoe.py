@@ -23,7 +23,7 @@ color_light_gray = "#646464"
 
 # main window setup
 root = Tk()
-root.title = ("Tic Tac Toe")
+root.title("Tic Tac Toe")
 root.resizable(False, False)
 
 frame = Frame(root)
