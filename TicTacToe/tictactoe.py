@@ -66,7 +66,13 @@ def winner_detector():
         return
 
 def new_game():
-    pass
+    global turns, game_finished
+    turns = 0
+    game_finished = False
+    turn_label.config(text=f"{current_player}'s turn", foreground="white")
+    for row in range(3):
+        for column in range(3):
+            board[row][column].config(text="", foreground=color_blue, background=color_gray)
 
 #game setup
 playerX = "X"
