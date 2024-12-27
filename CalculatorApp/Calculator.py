@@ -3,7 +3,7 @@ import ast
 import math
 
 root = Tk()
-
+root.title("Calculator")
 
 index=0
 # Insert a number at the current cursor position in the input field
