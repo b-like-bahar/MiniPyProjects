@@ -59,6 +59,12 @@ def winner_detector():
         game_finished=True
         return
 
+    # tie
+    if turns == 9:
+        turn_label.config(text="Tie!", foreground=color_yellow)
+        game_finished = True
+        return
+
 def new_game():
     pass
 
