@@ -1,5 +1,8 @@
 from tkinter import *
 
+def assign_tile(row, column):
+    pass
+
 def new_game():
     pass
 
@@ -29,6 +32,15 @@ frame.pack()
 turn_label = Label(frame, text=f"{current_player}'s turn", font=("Helvetica", 20), bg=color_gray, fg="white")
 turn_label.grid(row=0, column=0, columnspan=3, sticky="we")
 
+for row in range(3):
+    for column in range(3):
+        board[row][column] = Button(frame, text="", font=("Helvetica", 20, "bold"),
+                                    background=color_gray, foreground=color_blue, width=4, height=3,
+                                    command = lambda row=row, column=column: assign_tile(row, column))
+        board[row][column].grid(row=row+1, column=column)
+
 restart_btn = Button(frame, text=f"restart", font=("Helvetica", 20), bg=color_gray, fg="white", command=new_game)
 restart_btn.grid(row=4, column=0, columnspan=3, sticky="we" )
+
+
 root.mainloop()
