@@ -38,6 +38,14 @@ def winner_detector():
             game_finished=True
             return
 
+    # check winner diagonally
+    if board[0][0]["text"] == board[1][1]["text"] == board[2][2]["text"] and board[0][0]["text"] != "":
+        turn_label.config(text=f"{board[0][0]['text']} is winner!", foreground=color_yellow)
+        for i in range(3):
+            board[i][i].config(foreground=color_yellow, background=color_light_gray)
+        game_finished=True
+        return
+
 def new_game():
     pass
 
