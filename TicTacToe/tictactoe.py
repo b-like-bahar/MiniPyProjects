@@ -2,6 +2,10 @@ from tkinter import *
 
 def assign_tile(row, column):
     global current_player
+
+    if game_finished == True:
+        return
+
     if board[row][column]["text"] !="":
         return
 
