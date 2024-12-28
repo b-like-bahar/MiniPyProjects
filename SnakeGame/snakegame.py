@@ -18,5 +18,11 @@ root = Tk()
 root.title("Snake Game")
 root.resizable(False, False)
 
+score = 0
+direction="down"
+
+score_label = Label(text="score:{}".format(score), font=("Helvetica", 20))
+score_label.pack()
+
 
 root.mainloop()
