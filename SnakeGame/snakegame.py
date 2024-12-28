@@ -8,16 +8,27 @@ class Food:
         y = random.randint(0, (game_height / space_size) - 1) * space_size
 
         self.coordinate = [x,y]
-        canvas.create_oval(x,y,x+space_size, y+space_size, fill=food_color)
+        canvas.create_oval(x, y, x+space_size, y+space_size, fill=food_color)
 
+class Snake:
+    def __init__(self):
+        self.body_size = body_parts
+        self.coordinates = []
+        self.squares = []
 
+        for i in range(0, body_parts):
+            self.coordinates.append([0, 0])
+
+        for x,y in self.coordinates:
+            squares = canvas.create_rectangle(x, y, x+space_size, y+space_size, fill=snake_color)
+            self.squares.append(squares)
 
 
 game_width = 700
 game_height = 700
 speed = 50
 space_size = 50
-body_pats = 2
+body_parts = 2
 
 #colors
 snake_color = "#4584b6"
@@ -41,4 +52,5 @@ canvas = Canvas(root, bg=background_color, height=game_height, width=game_width)
 canvas.pack()
 
 food = Food()
+snake = Snake()
 root.mainloop()
