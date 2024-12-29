@@ -9,6 +9,8 @@ class Food:
         self.coordinates = [x,y]
         canvas.create_oval(x, y, x+space_size, y+space_size, fill=food_color, tags="food")
 
+
+
 class Snake:
     def __init__(self):
         self.body_size = body_parts
@@ -21,6 +23,8 @@ class Snake:
         for x,y in self.coordinates:
             squares = canvas.create_rectangle(x, y, x+space_size, y+space_size, fill=snake_color, tags="snake")
             self.squares.append(squares)
+
+
 
 def next_turn(snake, food):
     global score
@@ -93,9 +97,11 @@ def check_collisions(snake):
     return False
 
 
-def game_over():
-    pass
 
+def game_over():
+    canvas.delete(ALL)
+    canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2,
+                       font=("Helvetica", 50), text="GAME OVER", fill="red", tags="gameover")
 
 
 game_width = 700
