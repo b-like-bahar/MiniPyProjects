@@ -7,7 +7,7 @@ class Food:
         y = random.randint(0, (game_height / space_size) - 1) * space_size
 
         self.coordinates = [x,y]
-        canvas.create_oval(x, y, x+space_size, y+space_size, fill=food_color)
+        canvas.create_oval(x, y, x+space_size, y+space_size, fill=food_color, tags="food")
 
 class Snake:
     def __init__(self):
@@ -19,7 +19,7 @@ class Snake:
             self.coordinates.append([0, 0])
 
         for x,y in self.coordinates:
-            squares = canvas.create_rectangle(x, y, x+space_size, y+space_size, fill=snake_color)
+            squares = canvas.create_rectangle(x, y, x+space_size, y+space_size, fill=snake_color, tags="snake")
             self.squares.append(squares)
 
 def next_turn(snake, food):
