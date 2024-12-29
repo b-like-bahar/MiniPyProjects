@@ -137,10 +137,10 @@ def start_game():
         next_turn(snake, food)
 
 
-game_width = 700
-game_height = 700
-speed = 50
-space_size = 50
+game_width = 500
+game_height = 500
+speed = 100
+space_size = 25
 body_parts = 2
 
 #colors
