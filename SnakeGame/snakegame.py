@@ -1,4 +1,3 @@
-from pty import spawn
 from tkinter import *
 import random
 
@@ -45,7 +44,24 @@ def next_turn(snake, food):
 
     root.after(speed, next_turn, snake, food)
 
+def change_direction(new_direction):
+    global direction
 
+    if new_direction == 'left':
+        if direction != 'right':
+            direction = new_direction
+
+    elif new_direction == 'right':
+        if direction != 'left':
+            direction = new_direction
+
+    elif new_direction == 'up':
+        if direction != 'down':
+            direction = new_direction
+
+    elif new_direction == 'down':
+        if direction != 'up':
+            direction = new_direction
 
 game_width = 700
 game_height = 700
@@ -73,6 +89,11 @@ score_label.pack()
 
 canvas = Canvas(root, bg=background_color, height=game_height, width=game_width)
 canvas.pack()
+
+root.bind("<Left>", lambda event: change_direction('left'))
+root.bind("<Right>", lambda event: change_direction('right'))
+root.bind("<Up>", lambda event: change_direction('up'))
+root.bind("<Down>", lambda event: change_direction('down'))
 
 food = Food()
 snake = Snake()
