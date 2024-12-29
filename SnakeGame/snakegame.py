@@ -100,12 +100,20 @@ def check_collisions(snake):
 
 
 def game_over():
+    global score
+
     canvas.delete(ALL)
+
+    score_label.config(text="")
+
     canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2,
                        font=("Helvetica", 50), text="GAME OVER", fill="red", tags="gameover")
 
+    canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2+60,
+                       font=("Helvetica", 30), text="Score : {}".format(score), fill="white", tags="score")
+
     restart_button = Button(root, text="Restart", font=("Helvetica", 20), command=restart_game)
-    canvas.create_window(canvas.winfo_width()/2, canvas.winfo_height()/2 + 80,window=restart_button)
+    canvas.create_window(canvas.winfo_width()/2, canvas.winfo_height()/2 + 120,window=restart_button)
 
 
 
