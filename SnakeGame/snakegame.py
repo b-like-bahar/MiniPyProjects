@@ -110,15 +110,23 @@ def game_over():
 
 
 def restart_game():
-    global score, direction, snake, food
+    global score, direction, snake, food, game_started
     score = 0
     direction = 'down'
+    game_started = False
     canvas.delete(ALL)
-    score_label.config(text="score : {}".format(score))
+    score_label.config(text="Press any key to start")
     snake = Snake()
     food = Food()
-    next_turn(snake, food)
 
+
+
+def start_game():
+    global game_started
+    if not game_started:
+        game_started = True
+        score_label.config(text="Score : 0")
+        next_turn(snake, food)
 
 
 game_width = 700
@@ -141,6 +149,7 @@ root.resizable(False, False)
 
 score = 0
 direction="down"
+game_started = False
 
 score_label = Label(text="score : {}".format(score), font=("Helvetica", 20))
 score_label.pack()
@@ -148,6 +157,7 @@ score_label.pack()
 canvas = Canvas(root, bg=background_color, height=game_height, width=game_width)
 canvas.pack()
 
+root.bind("<Key>", lambda event: start_game())
 root.bind("<Left>", lambda event: change_direction('left'))
 root.bind("<Right>", lambda event: change_direction('right'))
 root.bind("<Up>", lambda event: change_direction('up'))
