@@ -23,6 +23,29 @@ class Snake:
             squares = canvas.create_rectangle(x, y, x+space_size, y+space_size, fill=snake_color)
             self.squares.append(squares)
 
+def next_turn(snake, food):
+    x,y=snake.coordinates[0]
+
+    if direction == "up":
+        y -=space_size
+    elif direction == "down":
+        y += space_size
+    elif direction == "left":
+        x -= space_size
+    elif direction == "right":
+        x += space_size
+
+    snake.coordinates.insert(0, (x, y))
+
+    square = canvas.create_rectangle(x, y, x+space_size, y+space_size, fill=snake_color)
+    snake.squares.insert(0, square)
+    del snake.coordinates[-1]
+    canvas.delete(snake.squares[-1])
+    del snake.squares[-1]
+
+    root.after(speed, next_turn, snake, food)
+
+
 
 game_width = 700
 game_height = 700
@@ -53,4 +76,6 @@ canvas.pack()
 
 food = Food()
 snake = Snake()
+next_turn(snake, food)
+
 root.mainloop()
