@@ -1,6 +1,7 @@
 from tkinter import *
 import random
 
+# food class manages the food object
 class Food:
     def __init__(self):
         x = random.randint(0, (game_width / space_size)-1) * space_size
@@ -10,7 +11,7 @@ class Food:
         canvas.create_oval(x, y, x+space_size, y+space_size, fill=food_color, tags="food")
 
 
-
+# snake class manages the snake object
 class Snake:
     def __init__(self):
         self.body_size = body_parts
@@ -25,7 +26,7 @@ class Snake:
             self.squares.append(squares)
 
 
-
+# function to handle the next turn in the game
 def next_turn(snake, food):
     global score
 
@@ -61,7 +62,7 @@ def next_turn(snake, food):
         root.after(speed, next_turn, snake, food)
 
 
-
+# function to change the direction of the snake
 def change_direction(new_direction):
     global direction
 
@@ -82,7 +83,7 @@ def change_direction(new_direction):
             direction = new_direction
 
 
-
+# function to check for collisions with walls or itself
 def check_collisions(snake):
     x,y = snake.coordinates[0]
 
@@ -98,7 +99,7 @@ def check_collisions(snake):
     return False
 
 
-
+#  function to handle game over scenarios
 def game_over():
     global score
 
@@ -116,7 +117,7 @@ def game_over():
     canvas.create_window(canvas.winfo_width()/2, canvas.winfo_height()/2 + 120,window=restart_button)
 
 
-
+# restart the game
 def restart_game():
     global score, direction, snake, food, game_started
     score = 0
@@ -128,7 +129,7 @@ def restart_game():
     food = Food()
 
 
-
+# start the game when key is pressed
 def start_game():
     global game_started
     if not game_started:
@@ -136,7 +137,7 @@ def start_game():
         score_label.config(text="Score : 0")
         next_turn(snake, food)
 
-
+# game setups
 game_width = 500
 game_height = 500
 speed = 100
@@ -155,16 +156,20 @@ root = Tk()
 root.title("Snake Game")
 root.resizable(False, False)
 
+#game variables
 score = 0
 direction="down"
 game_started = False
 
+#score label
 score_label = Label(text="score : {}".format(score), font=("Helvetica", 20))
 score_label.pack()
 
+#game board
 canvas = Canvas(root, bg=background_color, height=game_height, width=game_width)
 canvas.pack()
 
+#key bindings
 root.bind("<Key>", lambda event: start_game())
 root.bind("<Left>", lambda event: change_direction('left'))
 root.bind("<Right>", lambda event: change_direction('right'))
