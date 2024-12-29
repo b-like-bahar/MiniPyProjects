@@ -82,6 +82,7 @@ def change_direction(new_direction):
             direction = new_direction
 
 
+
 def check_collisions(snake):
     x,y = snake.coordinates[0]
 
@@ -102,6 +103,22 @@ def game_over():
     canvas.delete(ALL)
     canvas.create_text(canvas.winfo_width()/2, canvas.winfo_height()/2,
                        font=("Helvetica", 50), text="GAME OVER", fill="red", tags="gameover")
+
+    restart_button = Button(root, text="Restart", font=("Helvetica", 20), command=restart_game)
+    canvas.create_window(canvas.winfo_width()/2, canvas.winfo_height()/2 + 80,window=restart_button)
+
+
+
+def restart_game():
+    global score, direction, snake, food
+    score = 0
+    direction = 'down'
+    canvas.delete(ALL)
+    score_label.config(text="score : {}".format(score))
+    snake = Snake()
+    food = Food()
+    next_turn(snake, food)
+
 
 
 game_width = 700
