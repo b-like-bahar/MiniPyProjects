@@ -173,6 +173,6 @@ root.bind("<Down>", lambda event: change_direction('down'))
 
 food = Food()
 snake = Snake()
-next_turn(snake, food)
+score_label.config(text="Press any key to start")
 
 root.mainloop()
